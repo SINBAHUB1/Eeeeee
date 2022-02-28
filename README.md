@@ -2,7 +2,7 @@ getgenv().key = ""
 
 
 function script()
-
+    print("A")
     
     
 end
