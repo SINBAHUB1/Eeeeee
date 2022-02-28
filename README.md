@@ -3,12 +3,9 @@ getgenv().key = ""
 
 function script()
     print("A")
-    
-    
 end
 
 
-local VPSIP = "103.141.69.249"
 
 local key = getgenv().key or ""
 
@@ -71,10 +68,10 @@ end
 
 local randoms = randomString
 
-local data = jsondecode(http_request_get("http://"..VPSIP.."/raw/Server.php?key=".. key .."&random="..randoms))
+local data = jsondecode(http_request_get("http://103.141.69.249/raw/Server.php?key=".. key .."&random="..randoms))
 
 if data.Hwid == "Unknown" then
-    http_request_get("http://"..VPSIP.."/raw/Changehwid.php?key=".. key .."&hwid="..hwid)
+    http_request_get("http://103.141.69.249/raw/Changehwid.php?key=".. key .."&hwid="..hwid)
     game.Players.LocalPlayer:Kick("\nAdd Hwid \n Auto Rejoin in 5 seconds")
     wait(5)
     local ts = game:GetService("TeleportService")
